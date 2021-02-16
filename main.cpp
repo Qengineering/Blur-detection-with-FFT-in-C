@@ -67,11 +67,21 @@ int main(int argc, char **argv) {
     // IFFT
     cout << "Inverse transform...\n";
     Mat invFFT;
+    Mat logFFT;
+    double minVal,maxVal;
+
     dft(orgFFT, invFFT, DFT_INVERSE|DFT_REAL_OUTPUT);
 
     //img_fft = 20*numpy.log(numpy.abs(img_fft))
-    Mat logFFT;
-    cv::abs(invFFT);
+    invFFT = cv::abs(invFFT);
+    cv::minMaxLoc(invFFT,&minVal,&maxVal,NULL,NULL);
+    
+    //check for impossible values
+    if(maxVal<=0.0){
+        cerr << "No information, complete black image!\n";
+        return 1;
+    }
+
     cv::log(invFFT,logFFT);
     logFFT *= 20;
 
