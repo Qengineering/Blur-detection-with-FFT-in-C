@@ -4,3 +4,7 @@ This is a C++ implementation of the blur detection written in Python.<br/>
 https://github.com/whdcumt/BlurDetection. <br/><br/>
 Paper: http://www.cse.cuhk.edu.hk/leojia/all_final_papers/blur_detect_cvpr08.pdf <br/><br/>
 As known, blur is the lack of detailed features in an image. Detailed features have the most energy in the high-frequency Fourier spectrum. As to blurry regions (clouds, for instance), which have energy levels in low frequencies. This fact lets the blur detecting work. After removing the low frequencies, the energy of the remaining high part is measured. The higher output, the sharper the image must be. Please note, you should have OpenCV installed.
+
+------------
+
+[![paypal](https://qengineering.eu/images/TipJarSmall4.png)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=CPZTM5BB3FCYL) 
